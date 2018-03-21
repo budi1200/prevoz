@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  time: 2018-03-21 13:30:05
+  max_people: 1
+  desc_car: MyString
+  price: MyString
+  insurance: MyString
+  user: one
+  city_start: one
+  city_end: one
+
+two:
+  time: 2018-03-21 13:30:05
+  max_people: 1
+  desc_car: MyString
+  price: MyString
+  insurance: MyString
+  user: two
+  city_start: two
+  city_end: two

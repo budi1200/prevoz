@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cas: 2018-03-21 13:22:16
+  st_oseb: 1
+  avto_opis: MyString
+  cena: 1
+  zavarovanje: MyString
+  opis: MyString
+  uporabnik: 
+  kraj_zacetek: 
+  kraj_cilj: 
+
+two:
+  cas: 2018-03-21 13:22:16
+  st_oseb: 1
+  avto_opis: MyString
+  cena: 1
+  zavarovanje: MyString
+  opis: MyString
+  uporabnik: 
+  kraj_zacetek: 
+  kraj_cilj: 
