@@ -43,42 +43,4 @@
             <div class="mdl-cell mdl-cell--1-col"></div>
         </div>
     </div>
-    <!--<div id="body-wrapper-view" class="body-wrapper">
-    <div class="body-header-wrapper">
-        <h2 id="body-title">Prevozi</h2>
-        <div class="buttons">
-            <%= link_to 'Ponudi Prevoz', new_ride_path, {id: 'button-index', class: 'mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent'} %>
-        </div>
-    </div>
-    <div class="details-wrapper">
-        <table class="index-table">
-            <thead>
-                <tr>
-                    <td>Od</td>
-                    <td>Do</td>
-                    <td>Čas</td>
-                    <td>Cena</td>
-                </tr>
-            </thead>
-            <tbody>
-                <% @Rides.each do |ride| %>
-                    <tr class="table-ride-row">
-                        <td>
-                            <%= link_to ride.start.name, ride_path(ride.id) %>
-                        </td>
-                        <td>
-                            <%= link_to ride.end.name, ride_path(ride.id) %>
-                        </td>
-                        <td>
-                            <%= link_to ride.time, ride_path(ride.id) %>
-                        </td>
-                        <td>
-                            <%= link_to ride.price + " €", ride_path(ride.id) %>
-                        </td>
-                    </tr>
-                    <% end %>
-            </tbody>
-        </table>
-    </div>
 </div>
--->
