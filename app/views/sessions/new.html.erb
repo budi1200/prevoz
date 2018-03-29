@@ -1,7 +1,7 @@
 <div class="full-width">
     <div id="wrapper-inner-login" class="mdl-grid">
         <div class="mdl-cell mdl-cell--1-col"></div>
-        <div class="mdl-cell mdl-cell--10-col mdl-card mdl-shadow--2dp">
+        <div class="mdl-cell mdl-cell--10-col mdl-card mdl-shadow--2dp wrapper-wide">
             <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
                 <header class="mdl-layout__header--seamed">
                     <div class="mdl-layout__header-row">
@@ -12,10 +12,10 @@
                     </div>
                 </header>
 
+                <%= form_tag sessions_path do %>
                 <div class="mdl-grid full-width" style="text-align:center">
                     <div class="mdl-cell mdl-cell--5-col cell-eposta">
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                            <%= form_tag sessions_path do %>
                                 <%= label_tag "E-pošta", nil, {class: 'mdl-textfield__label'} %>
                                 <%= text_field_tag :email, params[:email], {class: 'mdl-textfield__input'} %>
                         </div>
@@ -28,22 +28,29 @@
                                 <%= label_tag "Geslo", nil, {class: 'mdl-textfield__label'} %>
                                 <%= password_field_tag :password, nil, {class: 'mdl-textfield__input'} %>
                         </div>
-                    </div>
-                    <div class="mdl-cell mdl-cell--6-col"></div>
-                    <div class="mdl-cell mdl-cell--1-col"></div>
-                    <!-- Login button -->
-                    <div class="mdl-cell mdl-cell--5-col">
-                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label align-left">
-                                <%= submit_tag 'Login', {class: 'mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent'} %>
-                            <% end %>
                         </div>
+                        <div class="mdl-cell mdl-cell--6-col"></div>
+                        <div class="mdl-cell mdl-cell--1-col"></div>
+                        <!-- Login button -->
+                        <div class="mdl-cell mdl-cell--5-col">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label align-left">
+                                    <%= submit_tag 'Login', {class: 'mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent'} %>
+                            </div>
+                        </div>
+                        <div class="mdl-cell mdl-cell--6-col"></div>
+                        <div class="mdl-cell mdl-cell--1-col"></div>
                     </div>
-                    <div class="mdl-cell mdl-cell--6-col"></div>
-                    <div class="mdl-cell mdl-cell--1-col"></div>
                 </div>
+                <div class="mdl-cell mdl-cell--1-col"></div>
+            </div>
+
+            <div class="mdl-cell mdl-cell--1-col"></div>
+            <div class="mdl-cell mdl-cell--1-col"></div>
+            <div class="mdl-cell mdl-cell--10-col">
+                <%= link_to 'Nazaj', root_path, {class: 'mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent'} %> 
             </div>
             <div class="mdl-cell mdl-cell--1-col"></div>
-        </div>
+        <% end %>
     </div>
 
     <!--<div id="body-wrapper-view" class="body-wrapper">
