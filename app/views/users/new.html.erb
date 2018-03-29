@@ -1,3 +1,4 @@
+<!--
 <div id="body-wrapper-view" class="body-wrapper">
     <h2 id="body-title">Registracija</h2>
     <div class="details-wrapper">
@@ -30,5 +31,75 @@
     
     <div class="footer">
         <%= link_to "Nazaj", root_path, {class: "button"} %>
+    </div>
+</div>
+-->
+
+<div class="full-width">
+    <div id="wrapper-inner-register" class="mdl-grid">
+        <div class="mdl-cell mdl-cell--1-col"></div>
+        <div class="mdl-cell mdl-cell--10-col mdl-card mdl-shadow--2dp wrapper-wide">
+            <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+                <header class="mdl-layout__header--seamed">
+                    <div class="mdl-layout__header-row">
+                        <!-- Title -->
+                        <span class="mdl-layout-title">Registracija</span>
+                        <div class="mdl-layout-spacer"></div>
+                        <nav class="mdl-navigation mdl-layout--large-screen-only"></nav>
+                    </div>
+                </header>
+
+                <%= form_for @User do |f| %>
+                    <div class="mdl-grid full-width" style="text-align:center">
+                        <div class="mdl-cell mdl-cell--5-col cell-eposta">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <%= f.label "E-Pošta", {class: 'mdl-textfield__label'} %>
+                                <%= f.text_field :email, {class: 'mdl-textfield__input'} %>
+                            </div>
+                        </div>
+                        <div class="mdl-cell mdl-cell--6-col"></div>
+                        <div class="mdl-cell mdl-cell--1-col"></div>
+                        
+                        <!-- Password form -->
+                        <div class="mdl-cell mdl-cell--5-col cell-geslo">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <%= f.label "Geslo", {class: 'mdl-textfield__label'} %>
+                                <%= f.password_field :password, {class: 'mdl-textfield__input'} %>
+                            </div>
+                        </div>
+                        <div class="mdl-cell mdl-cell--6-col"></div>
+                        <div class="mdl-cell mdl-cell--1-col"></div>
+
+                        <!-- Password Confirm form -->
+                        <div class="mdl-cell mdl-cell--5-col cell-geslo-confirm">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <%= f.label "Potrdi geslo", {class: 'mdl-textfield__label'} %>
+                                <%= f.password_field :password_confirmation, {class: 'mdl-textfield__input'} %>
+                            </div>
+                        </div>
+                        <div class="mdl-cell mdl-cell--6-col"></div>
+                        <div class="mdl-cell mdl-cell--1-col"></div>
+
+                        <!-- Register button -->
+                        <div class="mdl-cell mdl-cell--5-col">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label align-left">
+                                <%= f.submit "Registracija", {class: 'mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent'} %>
+                            </div>
+                        </div>
+                        <div class="mdl-cell mdl-cell--6-col"></div>
+                        <div class="mdl-cell mdl-cell--1-col"></div>
+                    </div>
+                <% end %>
+            </div>
+            
+            <div class="mdl-cell mdl-cell--1-col"></div>
+        </div>
+
+        <div class="mdl-cell mdl-cell--1-col"></div>
+        <div class="mdl-cell mdl-cell--1-col"></div>
+        <div class="mdl-cell mdl-cell--10-col">
+            <%= link_to 'Nazaj', root_path, {class: 'mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent'} %> 
+        </div>
+        <div class="mdl-cell mdl-cell--1-col"></div>
     </div>
 </div>
