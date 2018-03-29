@@ -1,0 +1,63 @@
+<div id="body-wrapper-view" class="body-wrapper">
+    
+    <h2 id="body-title">Ponudi Prevoz</h2>
+    
+    <div class="details-wrapper">
+        <div class="details-inner-wrapper">
+            <%= form_for @Ride do |f| %>
+                <table>
+                    <tr>
+                        <td><%= f.label 'Kraj Odhoda:', {class: 'details-info'} %></td>
+                        <td><%= f.text_field :start_id %></td>
+                    </tr>
+                    <tr>
+                        <td><%= f.label 'Kraj Prihoda:', {class: 'details-info'} %></td>
+                        <td><%= f.text_field :end_id %></td>
+                    </tr>
+                    <tr>
+                        <td><%= f.label 'Čas Odhoda:', {class: 'details-info'} %></td>
+                        <td><%= f.date_field :time %></td>
+                    </tr>
+                    <tr>
+                        <td><%= f.label 'Število oseb:', {class: 'details-info'} %></td>
+                        <td><%= f.number_field :max_people %></td>
+                    </tr>
+                    <tr>
+                        <td><%= f.label 'Avto:', {class: 'details-info'} %></td>
+                        <td><%= f.text_field :desc_car %></td>
+                    </tr>
+                    <tr>
+                        <td><%= f.label 'Cena:', {class: 'details-info'} %></td>
+                        <td><%= f.number_field :price %></td>
+                    </tr>
+                    <tr>
+                        <td><%= f.label 'Zavarovanje:', {class: 'details-info'} %></td>
+                        <td><%= f.text_field :insurance %></td>
+                    </tr>
+                    <tr>
+                        <td><%= f.label 'Telefon:', {class: 'details-info'} %></td>
+                        <td>
+                            <% if logged_in? %>
+                                <%= logged_in?.phone %>
+                            <% else %>
+                                <%= f.phone_field :phone_num %>
+                            <% end %>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><%= f.label 'Dodatne Informacije: ', {class: 'details-info'} %> <br></td>
+                        <td><%= f.text_area :desc %></td>
+                    </tr>
+                    <tr>
+                        <td><%= f.submit 'Dodaj', {class: 'button'} %></td>
+                    </tr>
+                </table>
+            <% end %>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <%= link_to "Nazaj", root_path, {class: "button"} %>
+    </div>
+    
+</div>

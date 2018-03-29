@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180321125158) do
+ActiveRecord::Schema.define(version: 20180324154612) do
 
   create_table "cities", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
@@ -28,8 +28,10 @@ ActiveRecord::Schema.define(version: 20180321125158) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "city_start_id"
-    t.integer "city_end_id"
+    t.integer "start_id"
+    t.integer "end_id"
+    t.string "desc"
+    t.integer "phone_num"
     t.index ["user_id"], name: "index_rides_on_user_id"
   end
 
@@ -40,7 +42,7 @@ ActiveRecord::Schema.define(version: 20180321125158) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "username"
-    t.string "password"
+    t.string "password_digest"
     t.string "email"
   end
 

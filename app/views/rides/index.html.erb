@@ -1,0 +1,84 @@
+<div class="full-width">
+    <div id="wrapper-inner" class="mdl-grid">
+        <div class="mdl-cell mdl-cell--1-col"></div>
+        <div class="mdl-cell mdl-cell--10-col mdl-card mdl-shadow--2dp">
+            <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+                <header class="mdl-layout__header--seamed">
+                    <div class="mdl-layout__header-row">
+                        <!-- Title -->
+                        <span class="mdl-layout-title">Prevozi</span>
+                        <!-- Add spacer, to align navigation to the right -->
+                        <div class="mdl-layout-spacer"></div>
+                        <!-- Navigation. We hide it in small screens. -->
+                        <nav class="mdl-navigation mdl-layout--large-screen-only">
+                            <%= link_to 'Ponudi Prevoz', new_ride_path, {class: 'mdl-navigation__link mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent prevoz-new'} %>
+                        </nav>
+                    </div>
+                </header>
+
+                <div class="mdl-grid full-width" style="text-align:center">
+                    <div class="mdl-cell mdl-cell--3-col">Od</div>
+                    <div class="mdl-cell mdl-cell--3-col">Do</div>
+                    <div class="mdl-cell mdl-cell--3-col">Čas</div>
+                    <div class="mdl-cell mdl-cell--3-col">Cena</div>
+                </div>
+
+                <% @Rides.each do |ride| %>
+                    <div class="mdl-grid full-width row-hover" style="text-align:center">
+                        <div class="mdl-cell mdl-cell--3-col">
+                            <%= link_to ride.start.name, ride_path(ride.id) %>
+                        </div>
+                        <div class="mdl-cell mdl-cell--3-col">
+                            <%= ride.end.name %>
+                        </div>
+                        <div class="mdl-cell mdl-cell--3-col">
+                            <%= ride.time %>
+                        </div>
+                        <div class="mdl-cell mdl-cell--3-col">
+                            <%= ride.price %>
+                        </div>
+                    </div>
+                    <% end %>
+            </div>
+            <div class="mdl-cell mdl-cell--1-col"></div>
+        </div>
+    </div>
+    <!--<div id="body-wrapper-view" class="body-wrapper">
+    <div class="body-header-wrapper">
+        <h2 id="body-title">Prevozi</h2>
+        <div class="buttons">
+            <%= link_to 'Ponudi Prevoz', new_ride_path, {id: 'button-index', class: 'mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent'} %>
+        </div>
+    </div>
+    <div class="details-wrapper">
+        <table class="index-table">
+            <thead>
+                <tr>
+                    <td>Od</td>
+                    <td>Do</td>
+                    <td>Čas</td>
+                    <td>Cena</td>
+                </tr>
+            </thead>
+            <tbody>
+                <% @Rides.each do |ride| %>
+                    <tr class="table-ride-row">
+                        <td>
+                            <%= link_to ride.start.name, ride_path(ride.id) %>
+                        </td>
+                        <td>
+                            <%= link_to ride.end.name, ride_path(ride.id) %>
+                        </td>
+                        <td>
+                            <%= link_to ride.time, ride_path(ride.id) %>
+                        </td>
+                        <td>
+                            <%= link_to ride.price + " €", ride_path(ride.id) %>
+                        </td>
+                    </tr>
+                    <% end %>
+            </tbody>
+        </table>
+    </div>
+</div>
+-->

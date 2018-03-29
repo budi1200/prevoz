@@ -10,6 +10,42 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
  */
+
+@import 'material';
+
+#header-title{
+    color: white;
+    text-decoration: none;
+}
+
+.full-width {
+    width: 100%;
+    height: 100%;
+}
+
+.row-hover{
+    transition: ease-in-out .2s;
+    cursor: pointer;
+}
+
+.row-hover:hover{
+    background-color: rgba(236, 113, 0,.65);
+}
+
+.prevoz-new{
+    line-height: 39px !important;
+}
+
+#wrapper-inner{
+    height: 36%;
+}
+
+#wrapper-inner-login{
+    height: 51%;
+}
+
+.button-left{
+    text-align: left;
+    margin-left: 1.5em;
+}

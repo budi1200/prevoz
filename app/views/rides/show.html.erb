@@ -1,0 +1,23 @@
+<div id="body-wrapper-view" class="body-wrapper">
+    <h2 id="body-title">Ponujam Prevoz</h2>
+    <div class="details-wrapper">
+        <span class="details-info-big"><%= @Ride.start.name + " - " + @Ride.end.name%></span><br>
+        <div class="details-inner-wrapper">
+            <span class="details-info">Čas:</span> <%= @Ride.time %> <br>
+            <span class="details-info">Število oseb:</span> <%= @Ride.max_people %> <br>
+            <span class="details-info">Avto:</span> <%= @Ride.desc_car%> <br>
+            <span class="details-info">Strošek:</span> <%= @Ride.price %> <br>
+            <span class="details-info">Zavarovanje:</span> <%= @Ride.insurance %> <br>
+            <span class="details-info">Telefon:</span> <%= @User.phone %> <br>
+            <span class="details-info">Dodatne Informacije:</span>
+            <p>
+                <%= @Ride.desc %>
+            </p>
+            <span class="details-info">Objavljeno: </span><%= @Ride.created_at %> <br>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <%= link_to "Nazaj", root_path, {class: "button"} %>
+    </div>
+</div>

@@ -9,6 +9,30 @@
   </head>
 
   <body>
+
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--no-drawer-button">
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <span class="mdl-layout-title"><%= link_to 'Prevoz', root_path, {id: 'header-title'} %></span>
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer"></div>
+      <!-- Navigation. We hide it in small screens. -->
+      <nav class="mdl-navigation mdl-layout--large-screen-only">
+        <% if logged_in? %>
+          <%= link_to 'Logout', logout_path, {class: 'mdl-navigation__link'} %>
+        <% else %>
+          <%= link_to 'Login', login_path, {class: 'mdl-navigation__link'} %>
+          <%= link_to 'Register', register_path, {class: 'mdl-navigation__link'} %>
+        <% end %>
+      </nav>
+    </div>
+  </header>
     <%= yield %>
+    <div class="popup-message">
+      <% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, id: "flash_#{name}" %>
+      <% end %>
+    </div>
   </body>
 </html>
