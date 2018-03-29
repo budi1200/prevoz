@@ -13,68 +13,46 @@
                 </header>
 
                 <%= form_tag sessions_path do %>
-                <div class="mdl-grid full-width" style="text-align:center">
-                    <div class="mdl-cell mdl-cell--5-col cell-eposta">
-                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <div class="mdl-grid full-width" style="text-align:center">
+                        <div class="mdl-cell mdl-cell--5-col cell-eposta">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                                 <%= label_tag "E-pošta", nil, {class: 'mdl-textfield__label'} %>
                                 <%= text_field_tag :email, params[:email], {class: 'mdl-textfield__input'} %>
-                        </div>
-                    </div>
-                    <div class="mdl-cell mdl-cell--6-col"></div>
-                    <div class="mdl-cell mdl-cell--1-col"></div>
-                    <!-- Password form -->
-                    <div class="mdl-cell mdl-cell--5-col cell-geslo">
-                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                <%= label_tag "Geslo", nil, {class: 'mdl-textfield__label'} %>
-                                <%= password_field_tag :password, nil, {class: 'mdl-textfield__input'} %>
-                        </div>
+                            </div>
                         </div>
                         <div class="mdl-cell mdl-cell--6-col"></div>
                         <div class="mdl-cell mdl-cell--1-col"></div>
+                        
+                        <!-- Password form -->
+                        <div class="mdl-cell mdl-cell--5-col">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <%= label_tag "Geslo", nil, {class: 'mdl-textfield__label'} %>
+                                <%= password_field_tag :password, nil, {class: 'mdl-textfield__input'} %>
+                            </div>
+                        </div>
+                        <div class="mdl-cell mdl-cell--6-col"></div>
+                        <div class="mdl-cell mdl-cell--1-col"></div>
+
                         <!-- Login button -->
                         <div class="mdl-cell mdl-cell--5-col">
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label align-left">
-                                    <%= submit_tag 'Login', {class: 'mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent'} %>
+                                <%= submit_tag 'Login', {class: 'mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent'} %>
                             </div>
                         </div>
                         <div class="mdl-cell mdl-cell--6-col"></div>
                         <div class="mdl-cell mdl-cell--1-col"></div>
                     </div>
-                </div>
-                <div class="mdl-cell mdl-cell--1-col"></div>
+                <% end %>
             </div>
-
+            
             <div class="mdl-cell mdl-cell--1-col"></div>
-            <div class="mdl-cell mdl-cell--1-col"></div>
-            <div class="mdl-cell mdl-cell--10-col">
-                <%= link_to 'Nazaj', root_path, {class: 'mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent'} %> 
-            </div>
-            <div class="mdl-cell mdl-cell--1-col"></div>
-        <% end %>
-    </div>
-
-    <!--<div id="body-wrapper-view" class="body-wrapper">
-    <h2 id="body-title">Prijava</h2>
-    <div class="details-wrapper">
-        <div class="details-inner-wrapper">
-            <%= form_tag sessions_path do %>
-                <div class="input-container">
-                    <%= label_tag "E-Pošta" %> <br>
-                    <%= text_field_tag :email, params[:email] %>
-                    <div class="bar"></div>
-                </div>
-                <div class="input-container">
-                    <%= label_tag "Geslo" %> <br>
-                    <%= password_field_tag :password %>
-                    <div class="bar"></div>
-                </div>
-                    <br>
-                <%= submit_tag 'Login', {class: 'button'} %>
-            <% end %>
         </div>
+
+        <div class="mdl-cell mdl-cell--1-col"></div>
+        <div class="mdl-cell mdl-cell--1-col"></div>
+        <div class="mdl-cell mdl-cell--10-col">
+            <%= link_to 'Nazaj', root_path, {class: 'mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent'} %> 
+        </div>
+        <div class="mdl-cell mdl-cell--1-col"></div>
     </div>
-    
-    <div class="footer">
-        <%= link_to "Nazaj", root_path, {class: "button"} %>
-    </div>
-</div>-->
+</div>
