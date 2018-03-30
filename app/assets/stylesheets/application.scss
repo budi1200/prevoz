@@ -66,7 +66,7 @@
 }
 
 #wrapper-inner-new-ride{
-    height: 135%;
+    height: 103%;
 }
 #wrapper-inner-new-ride .mdl-grid .mdl-cell--4-col{
     height: 60px;
@@ -77,9 +77,21 @@
 }
 
 #wrapper-inner-new-ride .align-left{
-    margin-left: 1.1em;
+    //margin-left: 1.1em;
 }
 
 #button-register-wrapper{
-    height: 90px;
+    //height: 90px;
+}
+
+#switch-wrap{
+    width: 35px;
+}
+
+#switch-text{
+    text-align: left;
+}
+
+#switch-text span{
+    left: 0;
 }
