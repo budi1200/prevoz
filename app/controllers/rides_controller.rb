@@ -1,4 +1,6 @@
 class RidesController < ApplicationController
+    skip_before_action :require_login, :except=>[:new,:create]
+
     def index
         @Rides = Ride.all
     end
