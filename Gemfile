@@ -66,3 +66,5 @@ gem 'hirb'
 gem 'jquery-rails'
 
 gem 'material_design_lite-sass'
+
+gem 'seed_dump'
