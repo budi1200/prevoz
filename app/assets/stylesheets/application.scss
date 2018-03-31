@@ -33,7 +33,7 @@
 }
 
 .full-width{
-    width: 100%;
+    width: 98%;
 }
 
 .full-width .mdl-layout__container{
@@ -45,7 +45,7 @@
 }
 
 .row-hover:hover{
-    background-color: rgba(236, 113, 0,.65);
+    background-color: rgba(255, 182, 89,.65);
 }
 
 .prevoz-new{
@@ -109,4 +109,23 @@
 #flash_alert{
     background-color: #f3adbb;
     border: 1px solid rgba(220, 20, 60,.70);
+}
+
+.details-info-big{
+    font-size: 1.5em;
+    color: #626e79;
+}
+
+.mdl-layout__header--seamed{
+    height: 50px;
+}
+
+.mdl-layout-title{
+    color: #ec7100;
+    font-weight: bold !important;
+}
+
+.row-hover a{
+    color: black;
+    text-decoration: none;
 }

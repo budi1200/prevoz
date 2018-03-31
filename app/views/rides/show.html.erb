@@ -1,4 +1,4 @@
-<div id="body-wrapper-view" class="body-wrapper">
+<!--<div id="body-wrapper-view" class="body-wrapper">
     <h2 id="body-title">Ponujam Prevoz</h2>
     <div class="details-wrapper">
         <span class="details-info-big"><%= @Ride.start.name + " - " + @Ride.end.name%></span><br>
@@ -19,5 +19,94 @@
     
     <div class="footer">
         <%= link_to "Nazaj", root_path, {class: "button"} %>
+    </div>
+</div>
+-->
+
+
+<div class="full-width">
+    <div id="wrapper-inner-new-ride" class="mdl-grid">
+        <div class="mdl-cell mdl-cell--1-col"></div>
+        <div class="mdl-cell mdl-cell--10-col mdl-card mdl-shadow--2dp wrapper-wide">
+            <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+                <header class="mdl-layout__header--seamed">
+                    <div class="mdl-layout__header-row">
+                        <!-- Title -->
+                        <span class="mdl-layout-title">Ponujam Prevoz</span>
+                        <div class="mdl-layout-spacer"></div>
+                        <nav class="mdl-navigation mdl-layout--large-screen-only"></nav>
+                    </div>
+                </header>
+
+                    <div class="mdl-grid full-width" style="padding-left: 30px; align-items: center;">
+                        <div class="mdl-cell mdl-cell--11-col">
+                            <span class="details-info-big"><%= @Ride.start.name + " - " + @Ride.end.name %></span>
+                        </div>
+                        <div class="mdl-cell mdl-cell--1-col"></div>
+
+                        <!-- Cas odhoda form -->
+                        <div class="mdl-cell mdl-cell--2-col">Čas:</div>
+                        <div class="mdl-cell mdl-cell--2-col">
+                            <%= @Ride.time %>
+                        </div>
+                        <div class="mdl-cell mdl-cell--8-col"></div>
+
+                        <!-- Max people form -->
+                        <div class="mdl-cell mdl-cell--2-col">Število Oseb:</div>
+                        <div class="mdl-cell mdl-cell--2-col">
+                            <%= @Ride.max_people %>
+                        </div>
+
+                        <div class="mdl-cell mdl-cell--2-col">Strošek:</div>
+                        <div class="mdl-cell mdl-cell--3-col">
+                            <%= @Ride.price %>
+                        </div>
+                        <div class="mdl-cell mdl-cell--2-col"></div>
+
+                        <!-- Avto desc form -->
+                        <div class="mdl-cell mdl-cell--2-col">Avto:</div>
+                        <div class="mdl-cell mdl-cell--2-col">
+                            <%= @Ride.desc_car %>
+                        </div>
+
+                        <div class="mdl-cell mdl-cell--2-col">Telefon:</div>
+                        <div class="mdl-cell mdl-cell--3-col">
+                            <%= @User.phone %>
+                        </div>
+                        <div class="mdl-cell mdl-cell--2-col"></div>
+
+                        <!-- Zavarovanje form -->
+                        <div class="mdl-cell mdl-cell--2-col">
+                            Zavarovanje:
+                        </div>
+                        <div class="mdl-cell mdl-cell--6-col">
+                            <% if(@Ride.insurance == 1) %>
+                                <%= 'Imam nezgodno zavarovanje za potnike' %>
+                            <% else %>
+                                <%= 'Nimam nezgodnega zavarovanja za potnike' %>
+                            <% end %>
+                        </div>
+                        <div class="mdl-cell mdl-cell-1-col"></div>
+
+                        <!-- Dodatne info form -->
+                        <div class="mdl-cell mdl-cell--2-col">Dodatne informacije:</div>
+                        <div class="mdl-cell mdl-cell--6-col">
+                            <%= @Ride.desc %>
+                        </div>
+                        <div class="mdl-cell mdl-cell--3-col"></div>
+                        <div class="mdl-cell mdl-cell--1-col"></div>
+
+                    </div>
+            </div>
+            
+            <div class="mdl-cell mdl-cell--1-col"></div>
+        </div>
+
+        <div class="mdl-cell mdl-cell--1-col"></div>
+        <div class="mdl-cell mdl-cell--1-col"></div>
+        <div class="mdl-cell mdl-cell--10-col">
+            <%= link_to 'Nazaj', root_path, {class: 'mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent'} %> 
+        </div>
+        <div class="mdl-cell mdl-cell--1-col"></div>
     </div>
 </div>

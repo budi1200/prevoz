@@ -1,4 +1,3 @@
-
 <div class="full-width">
     <div id="wrapper-inner-new-ride" class="mdl-grid">
         <div class="mdl-cell mdl-cell--1-col"></div>
@@ -92,8 +91,9 @@
 
                         <!-- Zavarovanje form -->
                         <div class="mdl-cell mdl-cell--2-col">
-                        <label id="switch-wrap" class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-2">
-                                <input type="checkbox" id="switch-2" class="mdl-switch__input">                          
+                        <label id="switch-wrap" class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="ride_insurance">
+                                <!--<input type="checkbox" id="switch-2" class="mdl-switch__input">-->
+                                <%= f.check_box :insurance, {class: 'mdl-switch__input'} %>                          
                             </div>
                             <div id="switch-text" class="mdl-cell mdl-cell--6-col">
                                 <span class="mdl-switch__label">Imam nezgodno zavarovanje za potnike v vozilu.</span>
