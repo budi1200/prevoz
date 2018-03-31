@@ -82,7 +82,7 @@
 }
 
 .popup-message{
-    position: absolute;
+    position: fixed;
     bottom: 0;
     display: flex;
     align-items: center;
@@ -98,10 +98,6 @@
     justify-content: center;
     align-items: center;
     padding: 10px 20px;
-}
-
-.hide-overflow{
-    overflow: hidden;
 }
 
 #flash_notice{
