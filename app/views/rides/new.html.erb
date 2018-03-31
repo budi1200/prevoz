@@ -1,4 +1,3 @@
-
 <div class="full-width">
     <div id="wrapper-inner-new-ride" class="mdl-grid">
         <div class="mdl-cell mdl-cell--1-col"></div>
@@ -44,7 +43,7 @@
                         <div class="mdl-cell mdl-cell--2-col">Čas odhoda:</div>
                         <div class="mdl-cell mdl-cell--3-col">
                             <%= f.label ' ', {class: 'mdl-textfield__label'} %>
-                            <%= f.time_field :time, {class: 'mdl-textfield__input'} %>
+                            <!--<%= f.time_field :time, {class: 'mdl-textfield__input'} %>-->
                         </div>
                         <div class="mdl-cell mdl-cell--1-col"></div>
 
@@ -81,15 +80,20 @@
                         <div class="mdl-cell mdl-cell--3-col">
                             <div class="mdl-textfield mdl-js-textfield">
                                 <%= f.label ' ', {class: 'mdl-textfield__label'} %>
-                                    <%= logged_in?.phone %>
+                                    <% if(@User.phone) %>
+                                        <%= @User.phone %>
+                                    <% else %>
+                                        <%= f.phone_field :phone_num, {class: 'mdl-textfield__input'} %>
+                                    <% end %>
                             </div>
                         </div>
                         <div class="mdl-cell mdl-cell--1-col"></div>
 
                         <!-- Zavarovanje form -->
                         <div class="mdl-cell mdl-cell--2-col">
-                        <label id="switch-wrap" class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-2">
-                                <input type="checkbox" id="switch-2" class="mdl-switch__input">                          
+                        <label id="switch-wrap" class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="ride_insurance">
+                                <!--<input type="checkbox" id="switch-2" class="mdl-switch__input">-->
+                                <%= f.check_box :insurance, {class: 'mdl-switch__input'} %>                          
                             </div>
                             <div id="switch-text" class="mdl-cell mdl-cell--6-col">
                                 <span class="mdl-switch__label">Imam nezgodno zavarovanje za potnike v vozilu.</span>
