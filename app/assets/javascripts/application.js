@@ -26,14 +26,13 @@ $(document).ready(function() {
 
 document.addEventListener("turbolinks:load", function() {
     componentHandler.upgradeDom();
-    console.log($(document).find(".flash"));
     if($(document).find('.flash').length == 1){
         $(document).ready(function(){
         asd = $('.flash').parent();
         asd.css("transform", "translateY(0px)");
         window.setTimeout(function(){
             asd.css("transform", "");
-        }, 5000);
+        }, 4500);
         });
     }
 });

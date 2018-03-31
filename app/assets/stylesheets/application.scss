@@ -91,6 +91,7 @@
     height: 60px;
     transition : all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
     transform: translateY(60px);
+    z-index: 99;    
 }
 
 .flash{
@@ -106,6 +107,6 @@
 }
 
 #flash_alert{
-    background-color : rgba(220, 20, 60,.35);
+    background-color: #f3adbb;
     border: 1px solid rgba(220, 20, 60,.70);
 }
