@@ -26,13 +26,16 @@ $(document).ready(function() {
 
 document.addEventListener("turbolinks:load", function() {
     componentHandler.upgradeDom();
-    if($(document).find('.flash').length == 1){
-        $(document).ready(function(){
-        asd = $('.flash').parent();
-        asd.css("transform", "translateY(0px)");
-        window.setTimeout(function(){
-            asd.css("transform", "");
-        }, 4500);
-        });
-    }
+    $(document).ready(function(){
+        if($(document).find('.flash').length == 1){
+            asd = $(".flash").parent();
+            window.setTimeout(function(){
+                asd.css("transform", "translateY(0px)");
+            }, 500);
+
+            window.setTimeout(function(){
+                asd.css("transform", "");
+            }, 4500);
+        }
+    });
 });
