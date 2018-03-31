@@ -11,7 +11,7 @@
 
   <body>
 
-<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--no-drawer-button">
+<div class="hide-overflow mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--no-drawer-button">
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
       <!-- Title -->
@@ -31,8 +31,9 @@
   </header>
     <%= yield %>
     <div class="popup-message">
+      <!--<div class="mdl-shadow--2dp" id="flash_notice">Logged In</div>-->
       <% flash.each do |name, msg| %>
-        <%= content_tag :div, msg, id: "flash_#{name}" %>
+        <%= content_tag :div, msg, id: "flash_#{name}", class: ['mdl-shadow--2dp', 'flash'] %>
       <% end %>
     </div>
   </body>
