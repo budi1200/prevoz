@@ -47,7 +47,7 @@
                         <!-- Cas odhoda form -->
                         <div class="mdl-cell mdl-cell--2-col">Čas:</div>
                         <div class="mdl-cell mdl-cell--2-col">
-                            <%= @Ride.time %>
+                            <%= @Ride.time.strftime("%A, %-d. %-m. ob yy:yy") %>
                         </div>
                         <div class="mdl-cell mdl-cell--8-col"></div>
 
