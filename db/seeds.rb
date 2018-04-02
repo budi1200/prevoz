@@ -478,9 +478,9 @@ City.create!([
   {name: "Žužemberk", post_num: 8360}
 ])
 Ride.create!([
-  {time: "2018-03-23 21:45:14", max_people: 4, desc_car: "Tesla - bel", price: "5", insurance: "nezgodno", user_id: 1, start_id: 430, end_id: 200, desc: "asdasdasdasdasd", phone_num: nil},
-  {time: "2018-03-27 08:03:46", max_people: 8, desc_car: "Tesla Model 3", price: "3", insurance: "da", user_id: 1, start_id: 420, end_id: 100, desc: "descriptionasdknaskd", phone_num: nil}
+  {max_people: 4, desc_car: "", price: "6", insurance: 0, user_id: 5, start_id: 321, end_id: 222, desc: "", phone_num: nil, rdate: "2018-04-02", time: "7:25"},
+  {max_people: 3, desc_car: "Tesla Model X - Črn", price: "4", insurance: 1, user_id: 5, start_id: 123, end_id: 213, desc: "asdaifhjashasj", phone_num: nil, rdate: "2018-04-03", time: "7:20"}
 ])
 User.create!([
-  {first_name: "user1", last_name: "priimek1", phone: 40111556, username: nil, password_digest: nil, email: nil}
+  {first_name: nil, last_name: nil, phone: nil, username: nil, password_digest: "$2a$10$qE25RTdgM53.zTUesHIBI.84aKYNpdK1lH5ekHSgZue81SODpQota", email: "matanusig@uemail99.com"}
 ])
