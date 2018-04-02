@@ -477,10 +477,10 @@ City.create!([
   {name: "Žirovnica", post_num: 4274},
   {name: "Žužemberk", post_num: 8360}
 ])
+User.create!([
+  {first_name: nil, last_name: nil, phone: nil, username: nil, password_digest: "$2a$10$qE25RTdgM53.zTUesHIBI.84aKYNpdK1lH5ekHSgZue81SODpQota", email: "matanusig@uemail99.com"}
+])
 Ride.create!([
   {max_people: 4, desc_car: "", price: "6", insurance: 0, user_id: 5, start_id: 321, end_id: 222, desc: "", phone_num: nil, rdate: "2018-04-02", time: "7:25"},
   {max_people: 3, desc_car: "Tesla Model X - Črn", price: "4", insurance: 1, user_id: 5, start_id: 123, end_id: 213, desc: "asdaifhjashasj", phone_num: nil, rdate: "2018-04-03", time: "7:20"}
-])
-User.create!([
-  {first_name: nil, last_name: nil, phone: nil, username: nil, password_digest: "$2a$10$qE25RTdgM53.zTUesHIBI.84aKYNpdK1lH5ekHSgZue81SODpQota", email: "matanusig@uemail99.com"}
 ])
