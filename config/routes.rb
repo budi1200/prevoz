@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'register' => 'users#new', as: 'register'
   get 'login' => 'sessions#new', as: 'login'
   get 'logout' => 'sessions#destroy', as: 'logout'
+  get '/:dat' => 'rides#index', as: 'place'
 
   resources :rides
   resources :users

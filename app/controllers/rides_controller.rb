@@ -2,7 +2,15 @@ class RidesController < ApplicationController
     skip_before_action :require_login, :except=>[:new,:create]
 
     def index
+        @date = Date.today
         @Rides = Ride.where(:time => Date.today)
+        if((Date.parse(params[:dat]) rescue ArgumentError) != ArgumentError)
+            @date = Date.parse(params[:dat])
+            @Rides = Ride.where(:time => params[:dat])
+        elsif(params[:dat] != nil)
+            redirect_to root_path
+            flash[:alert] = 'Invalid date'
+        end
     end
 
     def show
