@@ -38,7 +38,7 @@
                             <%= ride.end.name %>
                         </div>
                         <div class="mdl-cell mdl-cell--3-col">
-                            <%= ride.time.strftime("%A, ob xx:xx") %>
+                            <%= ride.rdate.strftime("%A, ob #{ride.time}") %>
                         </div>
                         <div class="mdl-cell mdl-cell--3-col">
                             <%= ride.price %>

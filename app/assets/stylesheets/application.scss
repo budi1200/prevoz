@@ -147,3 +147,34 @@
 .next_day a{
     text-decoration: none;
 }
+
+._jw-tpk-dark {
+    box-shadow: none !important;
+}
+
+._jw-tpk-container {
+    height: auto !important;
+    padding: 2px;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12) !important;
+
+}
+
+._jw-tpk-dark ._jw-tpk-header, ._jw-tpk-dark ol > li > a._jw-tpk-selected {
+    background: none !important;
+    color: black !important;
+}
+
+._jw-tpk-dark ._jw-tpk-header, ._jw-tpk-dark ol > li > a._jw-tpk-selected{
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    border: 1px solid rgba(0,0,0,.12);   
+}
+
+._jw-tpk-container ol>li>a:not(._jw-tpk-selected):hover{
+    background: white !important;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12) !important;
+    border: 1px solid rgba(0,0,0,.12);
+}
+
+._jw-tpk-dark ._jw-tpk-header, ._jw-tpk-dark ol > li > a._jw-tpk-selected{
+    background: none !important;
+}

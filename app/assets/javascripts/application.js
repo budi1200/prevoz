@@ -10,7 +10,8 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require rails-ujs
+//= require jquery3
+//= require jquery_ujs
 //= require turbolinks
 //= require_tree .
 //= require material
@@ -21,8 +22,18 @@ $(document).ready(function() {
     }).hover( function() {
     $(this).toggleClass('hover');
     });
-
 });
+
+function timepick() {
+    var timepicker = new TimePicker(["ride_time"], {
+        theme: "dark",
+        lang: "en"
+    });
+    timepicker.on("change", function(evt) {
+        var value = (evt.hour || "00") + ":" + (evt.minute || "00");
+        evt.element.value = value;
+    });
+}
 
 document.addEventListener("turbolinks:load", function() {
     componentHandler.upgradeDom();
