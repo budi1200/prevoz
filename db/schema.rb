@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180331174159) do
+ActiveRecord::Schema.define(version: 20180402100144) do
 
   create_table "cities", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
@@ -20,7 +20,6 @@ ActiveRecord::Schema.define(version: 20180331174159) do
   end
 
   create_table "rides", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.timestamp "time"
     t.integer "max_people"
     t.string "desc_car"
     t.string "price"
@@ -32,6 +31,8 @@ ActiveRecord::Schema.define(version: 20180331174159) do
     t.integer "end_id"
     t.string "desc"
     t.integer "phone_num"
+    t.date "rdate"
+    t.string "time"
     t.index ["user_id"], name: "index_rides_on_user_id"
   end
 

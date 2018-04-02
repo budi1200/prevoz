@@ -3,10 +3,10 @@ class RidesController < ApplicationController
 
     def index
         @date = Date.today
-        @Rides = Ride.where(:time => Date.today)
+        @Rides = Ride.where(:rdate => Date.today)
         if((Date.parse(params[:dat]) rescue ArgumentError) != ArgumentError)
             @date = Date.parse(params[:dat])
-            @Rides = Ride.where(:time => params[:dat])
+            @Rides = Ride.where(:rdate => params[:dat])
         elsif(params[:dat] != nil)
             redirect_to root_path
             flash[:alert] = 'Invalid date'
@@ -36,6 +36,6 @@ class RidesController < ApplicationController
     end
 
     private def ride_params
-            params.require(:ride).permit(:time, :max_people, :desc_car, :price, :start_id, :end_id, :desc, :user_id, :insurance)
+            params.require(:ride).permit(:rdate, :time, :max_people, :desc_car, :price, :start_id, :end_id, :desc, :user_id, :insurance)
         end
 end
