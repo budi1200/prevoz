@@ -17,7 +17,14 @@
                 </header>
 
                 <div class="mdl-grid full-width">
-                    <div class="mdl-cell mdl-cell--4-col"></div>
+                    <div class="mdl-cell mdl-cell--2-col next_day">
+                        <% if(@date != Date.today) %>
+                            <%= link_to @date.yesterday.strftime("< %A"), "#{@date.yesterday}" %>
+                        <% else %>
+                            <%= " " %>
+                        <% end %>
+                    </div>
+                    <div class="mdl-cell mdl-cell--2-col"></div>
                     <div class="mdl-cell mdl-cell--4-col date_display"><%= @date.strftime("%A, %d. %B") %></div>
                     <div class="mdl-cell mdl-cell--2-col"></div>
                     <div class="mdl-cell mdl-cell--2-col next_day"><%= link_to @date.tomorrow.strftime("%A >"), "#{@date.tomorrow}" %></div>
