@@ -14,6 +14,14 @@ class UsersController < ApplicationController
         end
     end
 
+    def myrides
+        @Rides = Ride.where(:user_id => logged_in?.id)
+    end
+
+    def profile
+        @User = logged_in?
+    end
+
     private def allowed_params
         params.require(:user).permit(:email, :password, :password_confirmation)
     end

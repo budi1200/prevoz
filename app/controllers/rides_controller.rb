@@ -23,6 +23,13 @@ class RidesController < ApplicationController
         @Ride = Ride.new
     end
 
+    def destroy
+        @Ride = Ride.find(params[:id])
+        @Ride.destroy
+
+        redirect_to myrides_path
+    end
+
     def create
         @User = logged_in?
         @Ride = @User.rides.new(ride_params)
