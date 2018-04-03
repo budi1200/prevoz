@@ -82,7 +82,7 @@
             <%= link_to 'Domov', root_path, {class: 'mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent'} %>
             <% if(@Ride.user_id == logged_in?.id) %> 
                 <%= link_to 'Moji prevozi', myrides_path, {class: 'mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent'} %>
-                <%= link_to 'Uredi', root_path, {class: 'mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent'} %>
+                <%= link_to 'Uredi', edit_ride_path, {class: 'mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent'} %>
                 <%= link_to 'Izbriši', ride_path(@Ride), method: :delete, data: {confirm: 'Ali ste prepričani?'}, :class => 'mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect button-red' %>
             <% end %>
         </div>

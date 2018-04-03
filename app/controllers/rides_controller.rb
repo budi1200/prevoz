@@ -23,6 +23,22 @@ class RidesController < ApplicationController
         @Ride = Ride.new
     end
 
+    def edit
+        @Ride = Ride.find(params[:id])
+        @User = logged_in?
+    end
+
+    def update
+        ride = Ride.find(params[:id])
+
+        if(ride.update(ride_params))
+            redirect_to ride_path
+        else
+            flash[:alert] = ride.errors.full_messages
+            redirect_to ride_edit_path(ride.id)
+        end
+    end
+
     def destroy
         @Ride = Ride.find(params[:id])
         @Ride.destroy
