@@ -21,10 +21,12 @@ class RidesController < ApplicationController
     def new
         @User = logged_in?
         @Ride = Ride.new
+        @Cities = City.all
     end
 
     def edit
         @Ride = Ride.find(params[:id])
+        @Cities = City.all
         @User = logged_in?
     end
 
