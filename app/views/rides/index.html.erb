@@ -9,7 +9,9 @@
                         <span class="mdl-layout-title">Prebrskaj po prevozih</span>
                         
                         <div class="mdl-layout-spacer"></div>
-                        
+                        <span class="today next_day"><%= link_to 'Danes', root_path unless (@date == Date.today) %></span>
+                        <div class="mdl-layout-spacer"></div>
+
                         <nav class="mdl-navigation">
                             <%= link_to 'Ponudi Prevoz', new_ride_path, {class: 'mdl-navigation__link mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent prevoz-new'} %>
                         </nav>
@@ -17,17 +19,17 @@
                 </header>
 
                 <div class="mdl-grid full-width">
-                    <div class="mdl-cell mdl-cell--2-col next_day">
+                    <div class="mdl-cell mdl-cell--3-col next_day">
                         <% if(@date != Date.today) %>
                             <%= link_to @date.yesterday.strftime("< %A"), "/ride/#{@date.yesterday}" %>
                         <% else %>
                             <%= " " %>
                         <% end %>
                     </div>
-                    <div class="mdl-cell mdl-cell--2-col"></div>
+                    <div class="mdl-cell mdl-cell--1-col"></div>
                     <div class="mdl-cell mdl-cell--4-col date_display"><%= @date.strftime("%A, %d. %B") %></div>
-                    <div class="mdl-cell mdl-cell--2-col"></div>
-                    <div class="mdl-cell mdl-cell--2-col next_day"><%= link_to @date.tomorrow.strftime("%A >"), "/ride/#{@date.tomorrow}" %></div>
+                    <div class="mdl-cell mdl-cell--1-col"></div>
+                    <div class="mdl-cell mdl-cell--3-col next_day"><%= link_to @date.tomorrow.strftime("%A >"), "/ride/#{@date.tomorrow}" %></div>
                 </div>
                 <div class="mdl-grid full-width bottom" style="text-align:center">
                     <div class="mdl-cell mdl-cell--3-col">Od</div>
