@@ -49,12 +49,18 @@ class RidesController < ApplicationController
     def create
         @User = logged_in?
         @Ride = @User.rides.new(ride_params)
-
-        if(@Ride.save)
-            redirect_to @Ride
-        else
+        
+        if(ride_params[:rdate].to_date < Date.today)
+            @Ride.errors.add(:base, "Neustrezen datum!")
             flash[:alert] = @Ride.errors.full_messages
             render 'new'
+        else
+            if(@Ride.save)
+                redirect_to @Ride
+            else
+                flash[:alert] = @Ride.errors.full_messages
+                render 'new'
+            end
         end
     end
 

@@ -1,3 +1,4 @@
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0jeWBJzlxKOsDbcFKMhh548ZaN4pSH8w&libraries=geometry&language=sl&callback=getDuration" async=false defer=false></script>
 <div class="full-width">
     <div id="wrapper-inner-new-ride" class="mdl-grid">
         <div class="mdl-cell mdl-cell--1-col"></div>
@@ -15,7 +16,9 @@
                 <div class="mdl-grid full-width" style="padding-left: 30px; align-items: center;">
                     <div class="mdl-cell mdl-cell--11-col">
                         <span class="details-info-big">
-                            <%= @Ride.start.name + " - " + @Ride.end.name %>
+                            <span id='origin'><%= @Ride.start.name %><span class="none"><%= " #{@Ride.start.post_num}" %></span></span> 
+                            - 
+                            <span id='dest'><%= @Ride.end.name %><span class="none"><%= " #{@Ride.end.post_num}" %></span></span>
                         </span>
                     </div>
                     <div class="mdl-cell mdl-cell--1-col"></div>
@@ -68,6 +71,14 @@
                     <div class="mdl-cell mdl-cell--2-col">Dodatne informacije:</div>
                     <div class="mdl-cell mdl-cell--6-col">
                         <%= @Ride.desc %>
+                    </div>
+                    <div class="mdl-cell mdl-cell--3-col"></div>
+                    <div class="mdl-cell mdl-cell--1-col"></div>
+
+                    <!-- trajanje form -->
+                    <div class="mdl-cell mdl-cell--2-col">Predvideno trajanje vožnje:</div>
+                    <div class="mdl-cell mdl-cell--6-col">
+                        <span id="asdfg"></span>
                     </div>
                     <div class="mdl-cell mdl-cell--3-col"></div>
                     <div class="mdl-cell mdl-cell--1-col"></div>

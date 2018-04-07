@@ -50,3 +50,24 @@ document.addEventListener("turbolinks:load", function() {
         }
     });
 });
+
+function getDuration() {
+    //Find the distance
+    var distanceService = new google.maps.DistanceMatrixService();
+    distanceService.getDistanceMatrix(
+        {
+            origins: [$('#origin').text().split(' ').join('+')],
+            destinations: [$('#dest').text().split(' ').join('+')],
+            travelMode: google.maps.TravelMode.DRIVING,
+            unitSystem: google.maps.UnitSystem.METRIC,
+            durationInTraffic: true,
+        },
+        function(response, status) {
+            if (status !== google.maps.DistanceMatrixStatus.OK) {
+            console.log("Error:", status);
+        } else {
+            $("#asdfg").text(response.rows[0].elements[0].duration.text);
+        }
+        }
+    );
+}
