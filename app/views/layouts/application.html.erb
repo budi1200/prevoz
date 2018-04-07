@@ -24,10 +24,12 @@
       <!-- Navigation. We hide it in small screens. -->
       <nav class="mdl-navigation">
         <% if logged_in? %>
-          <%= link_to 'Logout', logout_path, {class: 'mdl-navigation__link'} %>
+          <%= link_to 'Moj Profil', profile_path, {class: 'mdl-navigation__link'} %>
+          <%= link_to 'Moji Prevozi', myrides_path, {class: 'mdl-navigation__link'} %>
+          <%= link_to 'Odjava', logout_path, {class: 'mdl-navigation__link'} %>
         <% else %>
-          <%= link_to 'Login', login_path, {class: 'mdl-navigation__link'} %>
-          <%= link_to 'Register', register_path, {class: 'mdl-navigation__link'} %>
+          <%= link_to 'Prijava', login_path, {class: 'mdl-navigation__link'} %>
+          <%= link_to 'Registracija', register_path, {class: 'mdl-navigation__link'} %>
         <% end %>
       </nav>
     </div>

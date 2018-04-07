@@ -1,0 +1,142 @@
+<div class="full-width">
+    <div id="wrapper-inner-new-ride" class="mdl-grid">
+        <div class="mdl-cell mdl-cell--1-col"></div>
+        <div class="mdl-cell mdl-cell--10-col mdl-card mdl-shadow--2dp wrapper-wide">
+            <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+                <header class="mdl-layout__header--seamed">
+                    <div class="mdl-layout__header-row">
+                        <!-- Title -->
+                        <span class="mdl-layout-title">Ponudi Prevoz</span>
+                        <div class="mdl-layout-spacer"></div>
+                        <nav class="mdl-navigation mdl-layout--large-screen-only"></nav>
+                    </div>
+                </header>
+
+                <%= form_for @Ride do |f| %>
+                    <div class="mdl-grid full-width" style="padding-left: 30px; align-items: center;">
+                        <div class="mdl-cell mdl-cell--2-col">Kraj Odhoda:</div>
+                        <div class="mdl-cell mdl-cell--3-col">
+                            <div class="mdl-textfield mdl-js-textfield">
+                                <%= f.text_field :start_id, {class: 'mdl-textfield__input'} %>
+                                <%= f.label ' ', {class: 'mdl-textfield__label'} %>
+                            </div>
+                        </div>
+                        <div class="mdl-cell mdl-cell--1-col"></div>
+                        <div class="mdl-cell mdl-cell--2-col">Kraj Prihoda:</div>
+                        <div class="mdl-cell mdl-cell--3-col">
+                            <div class="mdl-textfield mdl-js-textfield">
+                                <%= f.label ' ', {class: 'mdl-textfield__label'} %>
+                                <%= f.text_field :end_id, {class: 'mdl-textfield__input'} %>
+                            </div>    
+                        </div>
+                        <div class="mdl-cell mdl-cell--1-col"></div>
+
+                        <!-- Cas odhoda form -->
+                        <div class="mdl-cell mdl-cell--2-col">Datum odhoda:</div>
+                        <div class="mdl-cell mdl-cell--3-col">
+                            <div class="mdl-textfield mdl-js-textfield">
+                                <%= f.label ' ', {class: 'mdl-textfield__label'} %>
+                                <%= f.date_field :rdate, {class: 'mdl-textfield__input'} %>
+                            </div>
+                        </div>
+                        <div class="mdl-cell mdl-cell--1-col"></div>
+                        <div class="mdl-cell mdl-cell--2-col">Čas odhoda:</div>
+                        <div class="mdl-cell mdl-cell--3-col">
+                            <div class="mdl-textfield mdl-js-textfield">
+                                <%= f.label ' ', {class: 'mdl-textfield__label'} %>
+                                <%= f.text_field :time, {class: 'mdl-textfield__input'} %>
+                            </div>
+                        </div>
+                        <div class="mdl-cell mdl-cell--1-col"></div>
+
+                        <!-- Max people form -->
+                        <div class="mdl-cell mdl-cell--2-col">Število Oseb:</div>
+                        <div class="mdl-cell mdl-cell--3-col">
+                            <div class="mdl-textfield mdl-js-textfield">
+                                <%= f.label ' ', {class: 'mdl-textfield__label'} %>
+                                <%= f.text_field :max_people, {class: 'mdl-textfield__input'} %>
+                            </div>
+                        </div>
+                        <div class="mdl-cell mdl-cell--1-col"></div>
+
+                        <div class="mdl-cell mdl-cell--2-col">Strošek:</div>
+                        <div class="mdl-cell mdl-cell--3-col">
+                            <div class="mdl-textfield mdl-js-textfield">
+                                <%= f.label ' ', {class: 'mdl-textfield__label'} %>
+                                <%= f.text_field :price, {class: 'mdl-textfield__input'} %>
+                            </div>
+                        </div>
+                        <div class="mdl-cell mdl-cell--1-col"></div>
+
+                        <!-- Avto desc form -->
+                        <div class="mdl-cell mdl-cell--2-col">Avto:</div>
+                        <div class="mdl-cell mdl-cell--3-col">
+                            <div class="mdl-textfield mdl-js-textfield">
+                                <%= f.label ' ', {class: 'mdl-textfield__label'} %>
+                                <%= f.text_field :desc_car, {class: 'mdl-textfield__input'} %>
+                            </div>
+                        </div>
+                        <div class="mdl-cell mdl-cell--1-col"></div>
+
+                        <div class="mdl-cell mdl-cell--2-col">Telefon:</div>
+                        <div class="mdl-cell mdl-cell--3-col">
+                            <div class="mdl-textfield mdl-js-textfield">
+                                <%= f.label ' ', {class: 'mdl-textfield__label'} %>
+                                    <% if(@User.phone) %>
+                                        <%= @User.phone %>
+                                    <% else %>
+                                        <%= f.phone_field :phone_num, {class: 'mdl-textfield__input'} %>
+                                    <% end %>
+                            </div>
+                        </div>
+                        <div class="mdl-cell mdl-cell--1-col"></div>
+
+                        <!-- Zavarovanje form -->
+                        <div class="mdl-cell mdl-cell--2-col">
+                        <label id="switch-wrap" class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="ride_insurance">
+                                <!--<input type="checkbox" id="switch-2" class="mdl-switch__input">-->
+                                <%= f.check_box :insurance, {class: 'mdl-switch__input'} %>                          
+                            </div>
+                            <div id="switch-text" class="mdl-cell mdl-cell--6-col">
+                                <span class="mdl-switch__label">Imam nezgodno zavarovanje za potnike v vozilu.</span>
+                            </div>
+                            </label>
+                        <div class="mdl-cell mdl-cell-1-col"></div>
+
+                        <!-- Dodatne info form -->
+                        <div class="mdl-cell mdl-cell--2-col">Dodatne informacije:</div>
+                        <div class="mdl-cell mdl-cell--6-col">
+                            <div class="mdl-textfield mdl-js-textfield">
+                                <%= f.label ' ', {class: 'mdl-textfield__label'} %>
+                                <%= f.text_area :desc, {class: 'mdl-textfield__input'} %>
+                            </div>
+                        </div>
+                        <div class="mdl-cell mdl-cell--3-col"></div>
+                        <div class="mdl-cell mdl-cell--1-col"></div>
+
+                        <!-- submit gumb -->
+                        <div class="mdl-cell mdl-cell--2-col">
+                            <div id="button-register-wrapper" class="mdl-textfield mdl-js-textfield align-left">
+                                <%= f.submit 'Dodaj', {class: 'mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent'} %>
+                            </div>
+                        </div>
+                        <div class="mdl-cell mdl-cell--4-col">
+
+                        </div>
+                        <div class="mdl-cell mdl-cell--5-col"></div>
+                        <div class="mdl-cell mdl-cell--1-col"></div>
+
+                    </div>
+                <% end %>
+            </div>
+        </div>
+
+        <div class="mdl-cell mdl-cell--1-col"></div>
+        <div class="mdl-cell mdl-cell--1-col"></div>
+        <div class="mdl-cell mdl-cell--10-col">
+            <%= link_to 'Nazaj', root_path, {class: 'mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent'} %> 
+        </div>
+        <div class="mdl-cell mdl-cell--1-col"></div>
+    </div>
+</div>
+<script>timepick();</script>

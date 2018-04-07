@@ -1,3 +1,4 @@
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0jeWBJzlxKOsDbcFKMhh548ZaN4pSH8w&libraries=geometry&language=sl&callback=getDuration" async=false defer=false></script>
 <div class="full-width">
     <div id="wrapper-inner-new-ride" class="mdl-grid">
         <div class="mdl-cell mdl-cell--1-col"></div>
@@ -12,74 +13,94 @@
                     </div>
                 </header>
 
-                    <div class="mdl-grid full-width" style="padding-left: 30px; align-items: center;">
-                        <div class="mdl-cell mdl-cell--11-col">
-                            <span class="details-info-big"><%= @Ride.start.name + " - " + @Ride.end.name %></span>
-                        </div>
-                        <div class="mdl-cell mdl-cell--1-col"></div>
-
-                        <!-- Cas odhoda form -->
-                        <div class="mdl-cell mdl-cell--2-col">Čas:</div>
-                        <div class="mdl-cell mdl-cell--2-col">
-                            <%= @Ride.rdate.strftime("%A, %-d. %-m. ob #{@Ride.time}") %>
-                        </div>
-                        <div class="mdl-cell mdl-cell--8-col"></div>
-
-                        <!-- Max people form -->
-                        <div class="mdl-cell mdl-cell--2-col">Število Oseb:</div>
-                        <div class="mdl-cell mdl-cell--2-col">
-                            <%= @Ride.max_people %>
-                        </div>
-
-                        <div class="mdl-cell mdl-cell--2-col">Strošek:</div>
-                        <div class="mdl-cell mdl-cell--3-col">
-                            <%= @Ride.price %>
-                        </div>
-                        <div class="mdl-cell mdl-cell--2-col"></div>
-
-                        <!-- Avto desc form -->
-                        <div class="mdl-cell mdl-cell--2-col">Avto:</div>
-                        <div class="mdl-cell mdl-cell--2-col">
-                            <%= @Ride.desc_car %>
-                        </div>
-
-                        <div class="mdl-cell mdl-cell--2-col">Telefon:</div>
-                        <div class="mdl-cell mdl-cell--3-col">
-                            <%= @User.phone %>
-                        </div>
-                        <div class="mdl-cell mdl-cell--2-col"></div>
-
-                        <!-- Zavarovanje form -->
-                        <div class="mdl-cell mdl-cell--2-col">
-                            Zavarovanje:
-                        </div>
-                        <div class="mdl-cell mdl-cell--6-col">
-                            <% if(@Ride.insurance == 1) %>
-                                <%= 'Imam nezgodno zavarovanje za potnike' %>
-                            <% else %>
-                                <%= 'Nimam nezgodnega zavarovanja za potnike' %>
-                            <% end %>
-                        </div>
-                        <div class="mdl-cell mdl-cell-1-col"></div>
-
-                        <!-- Dodatne info form -->
-                        <div class="mdl-cell mdl-cell--2-col">Dodatne informacije:</div>
-                        <div class="mdl-cell mdl-cell--6-col">
-                            <%= @Ride.desc %>
-                        </div>
-                        <div class="mdl-cell mdl-cell--3-col"></div>
-                        <div class="mdl-cell mdl-cell--1-col"></div>
-
+                <div class="mdl-grid full-width" style="padding-left: 30px; align-items: center;">
+                    <div class="mdl-cell mdl-cell--11-col">
+                        <span class="details-info-big">
+                            <span id='origin'><%= @Ride.start.name %><span class="none"><%= " #{@Ride.start.post_num}" %></span></span> 
+                            - 
+                            <span id='dest'><%= @Ride.end.name %><span class="none"><%= " #{@Ride.end.post_num}" %></span></span>
+                        </span>
                     </div>
+                    <div class="mdl-cell mdl-cell--1-col"></div>
+
+                    <!-- Cas odhoda form -->
+                    <div class="mdl-cell mdl-cell--2-col">Čas:</div>
+                    <div class="mdl-cell mdl-cell--5-col">
+                        <%= @Ride.rdate.strftime("%A, %-d. %-m. ob #{@Ride.time}") %>
+                    </div>
+                    <div class="mdl-cell mdl-cell--5-col"></div>
+
+                    <!-- Max people form -->
+                    <div class="mdl-cell mdl-cell--2-col">Število Oseb:</div>
+                    <div class="mdl-cell mdl-cell--2-col">
+                        <%= @Ride.max_people %>
+                    </div>
+
+                    <div class="mdl-cell mdl-cell--2-col">Strošek:</div>
+                    <div class="mdl-cell mdl-cell--3-col">
+                        <%= @Ride.price + " €" %>
+                    </div>
+                    <div class="mdl-cell mdl-cell--2-col"></div>
+
+                    <!-- Avto desc form -->
+                    <div class="mdl-cell mdl-cell--2-col">Avto:</div>
+                    <div class="mdl-cell mdl-cell--2-col">
+                        <%= @Ride.desc_car %>
+                    </div>
+
+                    <div class="mdl-cell mdl-cell--2-col">Telefon:</div>
+                    <div class="mdl-cell mdl-cell--3-col">
+                        <%= @User.phone %>
+                    </div>
+                    <div class="mdl-cell mdl-cell--2-col"></div>
+
+                    <!-- Zavarovanje form -->
+                    <div class="mdl-cell mdl-cell--2-col">
+                        Zavarovanje:
+                    </div>
+                    <div class="mdl-cell mdl-cell--6-col">
+                        <% if(@Ride.insurance == 1) %>
+                            <%= 'Imam nezgodno zavarovanje za potnike' %>
+                        <% else %>
+                            <%= 'Nimam nezgodnega zavarovanja za potnike' %>
+                        <% end %>
+                    </div>
+                    <div class="mdl-cell mdl-cell-1-col"></div>
+
+                    <!-- Dodatne info form -->
+                    <div class="mdl-cell mdl-cell--2-col">Dodatne informacije:</div>
+                    <div class="mdl-cell mdl-cell--6-col">
+                        <%= @Ride.desc %>
+                    </div>
+                    <div class="mdl-cell mdl-cell--3-col"></div>
+                    <div class="mdl-cell mdl-cell--1-col"></div>
+
+                    <!-- trajanje form -->
+                    <div class="mdl-cell mdl-cell--2-col">Predvideno trajanje vožnje:</div>
+                    <div class="mdl-cell mdl-cell--6-col">
+                        <span id="asdfg"></span>
+                    </div>
+                    <div class="mdl-cell mdl-cell--3-col"></div>
+                    <div class="mdl-cell mdl-cell--1-col"></div>
+
+                    <div class="mdl-cell mdl-cell--4-col">
+                        <% if(logged_in? && @Ride.user_id == logged_in?.id) %>
+                            <%= link_to 'Uredi', edit_ride_path, {class: 'mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent'} %>
+                            <%= link_to 'Izbriši', ride_path(@Ride), method: :delete, data: {confirm: 'Ali ste prepričani?'}, :class => 'mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect button-red' %>
+                        <% end %>
+                    </div>
+                </div>
+
             </div>
-            
-            <div class="mdl-cell mdl-cell--1-col"></div>
         </div>
 
         <div class="mdl-cell mdl-cell--1-col"></div>
         <div class="mdl-cell mdl-cell--1-col"></div>
         <div class="mdl-cell mdl-cell--10-col">
-            <%= link_to 'Nazaj', root_path, {class: 'mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent'} %> 
+            <%= link_to 'Domov', root_path, {class: 'mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent'} %>
+                <% if(logged_in? && @Ride.user_id == logged_in?.id) %>
+                <%= link_to 'Moji prevozi', myrides_path, {class: 'mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent'} %>
+            <% end %>
         </div>
         <div class="mdl-cell mdl-cell--1-col"></div>
     </div>

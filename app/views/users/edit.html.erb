@@ -1,0 +1,95 @@
+<div class="full-width">
+    <div id="wrapper-inner-new-ride" class="mdl-grid">
+        <div class="mdl-cell mdl-cell--1-col"></div>
+        <div class="mdl-cell mdl-cell--10-col mdl-card mdl-shadow--2dp wrapper-wide">
+            <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+                <header class="mdl-layout__header--seamed">
+                    <div class="mdl-layout__header-row">
+                        <!-- Title -->
+                        <span class="mdl-layout-title">Uredi Profil</span>
+                        <div class="mdl-layout-spacer"></div>
+                        <nav class="mdl-navigation mdl-layout--large-screen-only"></nav>
+                    </div>
+                </header>
+
+                <%= form_for @User do |f| %>
+                    <div class="mdl-grid full-width" style="padding-left: 30px; align-items: center;">
+                        <div class="mdl-cell mdl-cell--2-col">Ime:</div>
+                        <div class="mdl-cell mdl-cell--3-col">
+                            <div class="mdl-textfield mdl-js-textfield">
+                                <%= f.text_field :first_name, {class: 'mdl-textfield__input'} %>
+                                <%= f.label ' ', {class: 'mdl-textfield__label'} %>
+                            </div>
+                        </div>
+                        <div class="mdl-cell mdl-cell--1-col"></div>
+                        <div class="mdl-cell mdl-cell--2-col">Priimek:</div>
+                        <div class="mdl-cell mdl-cell--3-col">
+                            <div class="mdl-textfield mdl-js-textfield">
+                                <%= f.label ' ', {class: 'mdl-textfield__label'} %>
+                                <%= f.text_field :last_name, {class: 'mdl-textfield__input'} %>
+                            </div>    
+                        </div>
+                        <div class="mdl-cell mdl-cell--1-col"></div>
+
+                        <!-- Cas odhoda form -->
+                        <div class="mdl-cell mdl-cell--2-col">Telefon:</div>
+                        <div class="mdl-cell mdl-cell--3-col">
+                            <div class="mdl-textfield mdl-js-textfield">
+                                <%= f.label ' ', {class: 'mdl-textfield__label'} %>
+                                <%= f.text_field :phone, {class: 'mdl-textfield__input'} %>
+                            </div>
+                        </div>
+                        <div class="mdl-cell mdl-cell--1-col"></div>
+                        <div class="mdl-cell mdl-cell--2-col">Vzdevek:</div>
+                        <div class="mdl-cell mdl-cell--3-col">
+                            <div class="mdl-textfield mdl-js-textfield">
+                                <%= f.label ' ', {class: 'mdl-textfield__label'} %>
+                                <%= f.text_field :username, {class: 'mdl-textfield__input'} %>
+                            </div>
+                        </div>
+                        <div class="mdl-cell mdl-cell--1-col"></div>
+
+                        <!-- Max people form -->
+                        <div class="mdl-cell mdl-cell--2-col">E-pošta:</div>
+                        <div class="mdl-cell mdl-cell--3-col">
+                            <div class="mdl-textfield mdl-js-textfield">
+                                <%= f.label ' ', {class: 'mdl-textfield__label'} %>
+                                <%= f.text_field :email, {class: 'mdl-textfield__input'} %>
+                            </div>
+                        </div>
+                        <div class="mdl-cell mdl-cell--1-col"></div>
+
+                        <div class="mdl-cell mdl-cell--2-col">Geslo:</div>
+                        <div class="mdl-cell mdl-cell--3-col">
+                            <div class="mdl-textfield mdl-js-textfield">
+                                <%= f.label ' ', {class: 'mdl-textfield__label'} %>
+                                <%= f.text_field :password_digest, {class: 'mdl-textfield__input'} %>
+                            </div>
+                        </div>
+                        <div class="mdl-cell mdl-cell--1-col"></div>
+
+                        <!-- submit gumb -->
+                        <div class="mdl-cell mdl-cell--2-col">
+                            <div id="button-register-wrapper" class="mdl-textfield mdl-js-textfield align-left">
+                                <%= f.submit 'Shrani', {class: 'mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent'} %>
+                            </div>
+                        </div>
+                        <div class="mdl-cell mdl-cell--4-col">
+
+                        </div>
+                        <div class="mdl-cell mdl-cell--5-col"></div>
+                        <div class="mdl-cell mdl-cell--1-col"></div>
+
+                    </div>
+                <% end %>
+            </div>
+        </div>
+
+        <div class="mdl-cell mdl-cell--1-col"></div>
+        <div class="mdl-cell mdl-cell--1-col"></div>
+        <div class="mdl-cell mdl-cell--10-col">
+            <%= link_to 'Nazaj', profile_path, {class: 'mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent'} %> 
+        </div>
+        <div class="mdl-cell mdl-cell--1-col"></div>
+    </div>
+</div>

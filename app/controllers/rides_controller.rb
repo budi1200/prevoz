@@ -23,19 +23,48 @@ class RidesController < ApplicationController
         @Ride = Ride.new
     end
 
+    def edit
+        @Ride = Ride.find(params[:id])
+        @User = logged_in?
+    end
+
+    def update
+        ride = Ride.find(params[:id])
+
+        if(ride.update(ride_params))
+            redirect_to ride_path
+        else
+            flash[:alert] = ride.errors.full_messages
+            redirect_to ride_edit_path(ride.id)
+        end
+    end
+
+    def destroy
+        @Ride = Ride.find(params[:id])
+        @Ride.destroy
+
+        redirect_to myrides_path
+    end
+
     def create
         @User = logged_in?
         @Ride = @User.rides.new(ride_params)
-
-        if(@Ride.save)
-            redirect_to @Ride
-        else
+        
+        if(ride_params[:rdate].to_date < Date.today)
+            @Ride.errors.add(:base, "Neustrezen datum!")
             flash[:alert] = @Ride.errors.full_messages
             render 'new'
+        else
+            if(@Ride.save)
+                redirect_to @Ride
+            else
+                flash[:alert] = @Ride.errors.full_messages
+                render 'new'
+            end
         end
     end
 
     private def ride_params
-            params.require(:ride).permit(:rdate, :time, :max_people, :desc_car, :price, :start_id, :end_id, :desc, :user_id, :insurance)
+            params.require(:ride).permit(:rdate, :time, :max_people, :desc_car, :price, :start_id, :end_id, :desc, :insurance)
         end
 end
