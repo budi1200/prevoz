@@ -51,7 +51,8 @@ class RidesController < ApplicationController
     def create
         @User = logged_in?
         @Ride = @User.rides.new(ride_params)
-        
+        @Cities = City.all
+        # TODO: Clean up
         if(ride_params[:rdate].to_date < Date.today)
             @Ride.errors.add(:base, "Neustrezen datum!")
             flash[:alert] = @Ride.errors.full_messages

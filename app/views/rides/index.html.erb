@@ -35,7 +35,7 @@
                     <div class="mdl-cell mdl-cell--3-col">Od</div>
                     <div class="mdl-cell mdl-cell--3-col">Do</div>
                     <div class="mdl-cell mdl-cell--3-col">Čas</div>
-                    <div class="mdl-cell mdl-cell--3-col">Cena</div>
+                    <div class="mdl-cell mdl-cell--2-col">Cena</div>
                 </div>
 
                 <% @Rides.each do |ride| %>
@@ -49,7 +49,7 @@
                         <div class="mdl-cell mdl-cell--3-col">
                             <%= ride.rdate.strftime("%A, ob #{ride.time}") %>
                         </div>
-                        <div class="mdl-cell mdl-cell--3-col">
+                        <div class="mdl-cell mdl-cell--2-col">
                             <%= ride.price + " €" %>
                         </div>
                     </div>
