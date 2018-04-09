@@ -14,6 +14,8 @@
 
 @import 'material';
 
+$primary-color: #ff9800;
+
 #header-title{
     color: white;
     text-decoration: none;
@@ -47,7 +49,7 @@
 
 .row-hover:hover{
     //background-color: rgba(255, 182, 89,.65);
-    background-color: rgba(255, 152, 0,.80);
+    background-color: rgba(255, 152, 0, 0.9);
 }
 
 .prevoz-new{
@@ -124,7 +126,7 @@
 }
 
 .mdl-layout-title{
-    color: #ec7100;
+    color: $primary-color;
     font-weight: bold !important;
 }
 
@@ -136,6 +138,7 @@
 .date_display{
     text-align: center;
     font-size: 1.4em;
+    opacity: 0.7;
 }
 
 .next_day{
