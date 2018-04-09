@@ -22,6 +22,14 @@ $(document).ready(function() {
     }).hover( function() {
     $(this).toggleClass('hover');
     });
+
+    $("#ride_start_id").on('change', function(){
+        $("#ride_start_id").parent().removeClass('is-focused');
+    });
+
+    $("#ride_end_id").on('change', function(){
+        $("#ride_end_id").parent().removeClass('is-focused');
+    });
 });
 
 function timepick() {
