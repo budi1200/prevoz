@@ -52,18 +52,13 @@ class RidesController < ApplicationController
         @User = logged_in?
         @Ride = @User.rides.new(ride_params)
         @Cities = City.all
-        # TODO: Clean up
-        if(ride_params[:rdate].to_date < Date.today)
-            @Ride.errors.add(:base, "Neustrezen datum!")
+
+        if(ride_params[:rdate].to_date > Date.yesterday && @Ride.save)
+            redirect_to @Ride
+        else
+            @Ride.errors.add(:base, "Neustrezen datum!") if(ride_params[:rdate].to_date < Date.today)
             flash[:alert] = @Ride.errors.full_messages
             render 'new'
-        else
-            if(@Ride.save)
-                redirect_to @Ride
-            else
-                flash[:alert] = @Ride.errors.full_messages
-                render 'new'
-            end
         end
     end
 
