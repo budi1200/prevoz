@@ -16,6 +16,11 @@
 
 $primary-color: #ff9800;
 
+body{
+    background-color: #f2f7fc;
+    font-family: 'Open Sans';
+}
+
 #header-title{
     color: white;
     text-decoration: none;
@@ -199,4 +204,8 @@ $primary-color: #ff9800;
 
 .today{
     padding-right: 2.9em;
+}
+
+.textblock{
+    word-wrap: break-word;
 }
