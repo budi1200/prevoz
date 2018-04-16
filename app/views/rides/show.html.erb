@@ -22,42 +22,40 @@
                         </span>
                     </div>
                     <div class="mdl-cell mdl-cell--1-col"></div>
-
+                    <div class="mdl-grid">
                     <!-- Cas odhoda form -->
-                    <div class="mdl-cell mdl-cell--2-col">Čas:</div>
+                    <div class="mdl-cell mdl-cell--2-col details-label">Čas:</div>
                     <div class="mdl-cell mdl-cell--5-col">
                         <%= @Ride.rdate.strftime("%A, %-d. %-m. ob #{@Ride.time}") %>
                     </div>
                     <div class="mdl-cell mdl-cell--5-col"></div>
 
                     <!-- Max people form -->
-                    <div class="mdl-cell mdl-cell--2-col">Število Oseb:</div>
+                    <div class="mdl-cell mdl-cell--2-col details-label">Število Oseb:</div>
                     <div class="mdl-cell mdl-cell--2-col">
                         <%= @Ride.max_people %>
                     </div>
 
-                    <div class="mdl-cell mdl-cell--2-col">Strošek:</div>
+                    <div class="mdl-cell mdl-cell--2-col details-label">Strošek:</div>
                     <div class="mdl-cell mdl-cell--3-col">
                         <%= @Ride.price + " €" %>
                     </div>
                     <div class="mdl-cell mdl-cell--2-col"></div>
 
                     <!-- Avto desc form -->
-                    <div class="mdl-cell mdl-cell--2-col">Avto:</div>
+                    <div class="mdl-cell mdl-cell--2-col details-label">Avto:</div>
                     <div class="mdl-cell mdl-cell--2-col">
                         <%= @Ride.desc_car %>
                     </div>
 
-                    <div class="mdl-cell mdl-cell--2-col">Telefon:</div>
+                    <div class="mdl-cell mdl-cell--2-col details-label">Telefon:</div>
                     <div class="mdl-cell mdl-cell--3-col">
                         <%= @User.phone %>
                     </div>
                     <div class="mdl-cell mdl-cell--2-col"></div>
 
                     <!-- Zavarovanje form -->
-                    <div class="mdl-cell mdl-cell--2-col">
-                        Zavarovanje:
-                    </div>
+                    <div class="mdl-cell mdl-cell--2-col details-label">Zavarovanje:</div>
                     <div class="mdl-cell mdl-cell--6-col">
                         <% if(@Ride.insurance == 1) %>
                             <%= 'Imam nezgodno zavarovanje za potnike' %>
@@ -68,7 +66,7 @@
                     <div class="mdl-cell mdl-cell-1-col"></div>
 
                     <!-- Dodatne info form -->
-                    <div class="mdl-cell mdl-cell--2-col">Dodatne informacije:</div>
+                    <div class="mdl-cell mdl-cell--2-col details-label">Dodatne informacije:</div>
                     <div class="mdl-cell mdl-cell--6-col textblock">
                         <%= @Ride.desc %>
                     </div>
@@ -76,13 +74,13 @@
                     <div class="mdl-cell mdl-cell--1-col"></div>
 
                     <!-- trajanje form -->
-                    <div class="mdl-cell mdl-cell--2-col">Predvideno trajanje vožnje:</div>
+                    <div class="mdl-cell mdl-cell--2-col details-label">Predvideno trajanje vožnje:</div>
                     <div class="mdl-cell mdl-cell--6-col">
                         <span id="asdfg"></span>
                     </div>
                     <div class="mdl-cell mdl-cell--3-col"></div>
                     <div class="mdl-cell mdl-cell--1-col"></div>
-
+</div>
                     <div class="mdl-cell mdl-cell--4-col">
                         <% if(logged_in? && @Ride.user_id == logged_in?.id) %>
                             <%= link_to 'Uredi', edit_ride_path, {class: 'mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent'} %>
